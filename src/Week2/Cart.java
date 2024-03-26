@@ -6,7 +6,7 @@ public class Cart {
             new DigitalVideoDisc[MAX_NUMBER_ORDERS];
     public int qtyOrdered = 0;
     public void addDigitalVideoDisc(DigitalVideoDisc disc){
-        if(qtyOrdered == 20){
+        if(qtyOrdered == MAX_NUMBER_ORDERS){
             System.out.println("The cart is almost full");
         }
         else {
