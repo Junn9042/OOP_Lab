@@ -31,9 +31,9 @@ public class DigitalVideoDisc extends Disc implements Playable{
         return "DVD: " + getTitle() + " - " + getCategory() + " - " + getDirector() + " - " + getLength() + ": " + getCost();
     }
 
-    public boolean isMatch(String title){
+    public boolean isMatch(String title) {
         return Objects.equals(this.getTitle(), title);
-
+    }
     @Override
     public void play() {
         System.out.println("Playing DVD: " + this.getTitle());
