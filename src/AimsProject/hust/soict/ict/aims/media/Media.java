@@ -73,7 +73,7 @@ public class Media {
 
     @Override
     public String toString() {
-        return getId() + " - " + getTitle() + " - " + getCategory() + " - " + getCost() + " - ";
+        return getId() + " - " + getTitle() + " - " + getCategory() + " - " + getCost();
     }
 
     Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
