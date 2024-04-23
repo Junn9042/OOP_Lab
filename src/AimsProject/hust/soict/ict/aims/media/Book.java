@@ -14,6 +14,11 @@ public class Book extends Media {
         this.authors = authors;
     }
 
+    public Book(int id, String title, String category, int length, List<String> authors) {
+        super(id, title, category, length);
+        this.authors = authors;
+    }
+
     public void addAuthor(String authorName){
         if(!authors.contains(authorName)){
             authors.add(authorName);
@@ -30,5 +35,11 @@ public class Book extends Media {
         else{
             System.out.println("The author is not in the author list");
         }
+    }
+
+
+    @Override
+    public String toString() {
+        return "Book: " + super.toString() + getAuthors();
     }
 }

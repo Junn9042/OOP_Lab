@@ -4,8 +4,6 @@ import AimsProject.hust.soict.ict.aims.media.Media;
 import java.util.ArrayList;
 
 public class Cart {
-    public static final int MAX_NUMBER_ORDERS = 20;
-
     private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
 
     public void addMedia(Media media){
