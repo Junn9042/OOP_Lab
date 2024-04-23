@@ -40,6 +40,6 @@ public class Book extends Media {
 
     @Override
     public String toString() {
-        return "Book: " + super.toString() + getAuthors();
+        return "Book: " + super.toString() + " - "+ getAuthors();
     }
 }
