@@ -2,7 +2,7 @@ package AimsProject.hust.soict.ict.aims.media;
 
 import java.util.Objects;
 
-public class DigitalVideoDisc extends Disc{
+public class DigitalVideoDisc extends Disc implements Playable{
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         super(title, category, director, length, cost);
     }
@@ -33,5 +33,10 @@ public class DigitalVideoDisc extends Disc{
 
     public boolean isMatch(String title){
         return Objects.equals(this.getTitle(), title);
+
+    @Override
+    public void play() {
+        System.out.println("Playing DVD: " + this.getTitle());
+        System.out.println("DVD length: " + this.getLength());
     }
 }

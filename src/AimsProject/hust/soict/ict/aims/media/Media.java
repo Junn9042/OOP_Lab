@@ -1,5 +1,6 @@
 package AimsProject.hust.soict.ict.aims.media;
 
+import java.util.Objects;
 public abstract class Media {
     private int id;
     private String title;
@@ -36,6 +37,9 @@ public abstract class Media {
 
     public void setCost(float cost) {
         this.cost = cost;
+    }
+    public boolean isMatch(String title){
+        return Objects.equals(this.getTitle(), title);
     }
 
 

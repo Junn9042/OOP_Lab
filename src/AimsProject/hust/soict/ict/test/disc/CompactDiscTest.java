@@ -16,5 +16,6 @@ public class CompactDiscTest {
         System.out.println(compactDisc.getLength());
         compactDisc.addTrack(track1);
 
+        compactDisc.play();
     }
 }
