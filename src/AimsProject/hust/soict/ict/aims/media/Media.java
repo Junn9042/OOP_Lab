@@ -38,6 +38,27 @@ public abstract class Media {
     public void setCost(float cost) {
         this.cost = cost;
     }
+
+    public Media(int id, String title, String category, float cost) {
+        this.id = id;
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+
+    public Media(String title, String category, float cost) {
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+
+    public Media() {
+    }
+
+    public Media(String title) {
+        this.title = title;
+    }
+
     public boolean isMatch(String title){
         return Objects.equals(this.getTitle(), title);
     }
@@ -47,5 +68,10 @@ public abstract class Media {
         if (this == obj) return true;
         if (!(obj instanceof Media that)) return false;
         return Objects.equals(getTitle(), that.getTitle());
+    }
+
+    @Override
+    public String toString() {
+        return getId() + " - " + getTitle() + " - " + getCategory() + " - " + getCost() + " - ";
     }
 }
