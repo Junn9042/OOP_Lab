@@ -22,7 +22,7 @@ public class DigitalVideoDisc extends Disc implements Playable{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Week2.DigitalVideoDisc that)) return false;
+        if (!(o instanceof DigitalVideoDisc that)) return false;
         return getLength() == that.getLength() && Float.compare(getCost(), that.getCost()) == 0 && Objects.equals(getTitle(), that.getTitle()) && Objects.equals(getCategory(), that.getCategory()) && Objects.equals(getDirector(), that.getDirector());
     }
 
