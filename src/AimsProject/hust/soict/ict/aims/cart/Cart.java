@@ -2,9 +2,14 @@ package AimsProject.hust.soict.ict.aims.cart;
 
 import AimsProject.hust.soict.ict.aims.media.Media;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cart {
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    private List<Media> itemsOrdered = new ArrayList<Media>();
+
+    public List<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
 
     public void addMedia(Media media){
         if(!itemsOrdered.contains(media)){
@@ -50,6 +55,8 @@ public class Cart {
                 System.out.println(this.itemsOrdered.get(i).toString());
             }
         }
-        if(count == 0) System.out.println("No DVDs found");
+        if(count == 0) System.out.println("No items found");
     }
+
+
 }

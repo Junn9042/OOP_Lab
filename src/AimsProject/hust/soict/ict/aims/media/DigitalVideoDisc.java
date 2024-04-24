@@ -19,8 +19,12 @@ public class DigitalVideoDisc extends Disc implements Playable{
         super(title, category, cost);
     }
 
-    public DigitalVideoDisc(String title, String category, String director, float cost) {
-        super(title, category, director, cost);
+    public DigitalVideoDisc(String title, String category, float cost, String director) {
+        super(title, category, cost, director);
+    }
+
+    public DigitalVideoDisc(int id, String title, String category, float cost) {
+        super(id, title, category, cost);
     }
 
     @Override
@@ -35,9 +39,6 @@ public class DigitalVideoDisc extends Disc implements Playable{
         return "DVD: " + super.toString();
     }
 
-    public boolean isMatch(String title) {
-        return Objects.equals(this.getTitle(), title);
-    }
     @Override
     public void play() {
         System.out.println("Playing DVD: " + this.getTitle());

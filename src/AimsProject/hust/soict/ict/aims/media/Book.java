@@ -1,6 +1,8 @@
 package AimsProject.hust.soict.ict.aims.media;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Book extends Media {
@@ -14,9 +16,15 @@ public class Book extends Media {
         this.authors = authors;
     }
 
-    public Book(int id, String title, String category, int length, List<String> authors) {
+    public Book(int id, String title, String category, int length, String... authors) {
         super(id, title, category, length);
-        this.authors = authors;
+        for(String author: authors){
+            this.authors.add(author);
+        }
+    }
+
+    public Book(int id, String title, String category, float cost) {
+        super(id, title, category, cost);
     }
 
     public void addAuthor(String authorName){
@@ -40,6 +48,6 @@ public class Book extends Media {
 
     @Override
     public String toString() {
-        return "Book: " + super.toString() + " - "+ getAuthors();
+        return "Book: " + super.toString() + " - " + getAuthors();
     }
 }

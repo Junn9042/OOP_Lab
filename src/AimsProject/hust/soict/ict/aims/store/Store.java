@@ -1,12 +1,17 @@
 package AimsProject.hust.soict.ict.aims.store;
 
-import AimsProject.hust.soict.ict.aims.media.DigitalVideoDisc;
 import AimsProject.hust.soict.ict.aims.media.Media;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Store {
-    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
+    private List<Media> itemsInStore = new ArrayList<Media>();
+
+    public List<Media> getItemsInStore() {
+        return itemsInStore;
+    }
+
     public void addMedia(Media media){
         if(!itemsInStore.contains(media)){
             itemsInStore.add(media);
@@ -23,4 +28,21 @@ public class Store {
         else System.out.println("No disc found");
     }
 
+    public void print(){
+        System.out.println("The available media in the store is: ");
+        for(int i = 0; i < itemsInStore.size(); i++){
+            System.out.println(itemsInStore.get(i).toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+    public int SearchbyTitle(String title){
+        for(int i = 0; i < itemsInStore.size(); i++){
+            if(itemsInStore.get(i).isMatch(title)){
+                return i;
+            }
+        }
+        System.out.println("Valid media title");
+        return -1;
+    }
 }
