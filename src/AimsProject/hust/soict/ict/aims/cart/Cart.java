@@ -57,6 +57,25 @@ public class Cart {
         }
         if(count == 0) System.out.println("No items found");
     }
+    public Media searchTitle(String title) {
+        Media item = null;
+        for (int i=0;i<itemsOrdered.size(); i++) {
+            if (itemsOrdered.get(i).isMatch(title)) {
+                return itemsOrdered.get(i);
+            }
+        }
+        System.out.println("No items found");
+        return item;
+    }
 
-
+    public Media searchId(int Id) {
+        Media item = null;
+        for (int i=0;i<itemsOrdered.size(); i++) {
+            if (itemsOrdered.get(i).getId() == Id) {
+                return itemsOrdered.get(i);
+            }
+        }
+        System.out.println("No items found");
+        return item;
+    }
 }

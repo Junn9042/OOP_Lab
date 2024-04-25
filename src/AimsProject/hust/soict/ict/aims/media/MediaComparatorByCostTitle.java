@@ -8,6 +8,9 @@ public class MediaComparatorByCostTitle implements Comparator<Media> {
         if(o1.getCost() == o2.getCost()){
             return o1.getTitle().compareTo(o2.getTitle());
         }
-        else return (int)(o1.getCost() - o2.getCost());
+        else if(o1.getCost() > o2.getCost()){
+            return 1;
+        }
+        else return -1;
     }
 }

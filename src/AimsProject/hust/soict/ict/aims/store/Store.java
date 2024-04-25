@@ -36,13 +36,14 @@ public class Store {
         System.out.println("--------------------------------------");
     }
 
-    public int SearchbyTitle(String title){
-        for(int i = 0; i < itemsInStore.size(); i++){
-            if(itemsInStore.get(i).isMatch(title)){
-                return i;
+
+    public Media searchTitle(String title) {
+        Media item = null;
+        for (int i=0;i<itemsInStore.size(); i++) {
+            if (itemsInStore.get(i).isMatch(title)) {
+                return itemsInStore.get(i);
             }
         }
-        System.out.println("Valid media title");
-        return -1;
+        return item;
     }
 }
