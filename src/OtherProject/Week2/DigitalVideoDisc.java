@@ -1,4 +1,4 @@
-package Week2;
+package OtherProject.Week2;
 
 import java.util.Objects;
 

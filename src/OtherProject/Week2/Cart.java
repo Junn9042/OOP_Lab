@@ -1,4 +1,4 @@
-package Week2;
+package OtherProject.Week2;
 
 public class Cart {
     public static final int MAX_NUMBER_ORDERS = 20;

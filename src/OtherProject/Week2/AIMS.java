@@ -1,4 +1,4 @@
-package Week2;
+package OtherProject.Week2;
 
 public class AIMS {
     public static void main(String[] args) {
