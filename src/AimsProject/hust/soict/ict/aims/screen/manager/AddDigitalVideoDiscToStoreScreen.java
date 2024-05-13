@@ -32,7 +32,7 @@ public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
         center.add(lengthField, fieldConstrains);
         center.add(directorLabel, labelConstrains);
         center.add(directorField, fieldConstrains);
-        center.add(addButton);
+        center.add(addButton, fieldConstrains);
 
     }
 
