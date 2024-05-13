@@ -68,7 +68,7 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
             addTrack(); // Call addTrack method when the button is clicked
         });
 
-        center.add(addTrackButton);
+        center.add(addTrackButton, fieldConstrains);
 
         addButton = new JButton("Add CD");
         addButton.addActionListener(new ActionListener() {
@@ -78,7 +78,7 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
             }
         });
 
-        center.add(addButton);
+        center.add(addButton, fieldConstrains);
 
     }
 
