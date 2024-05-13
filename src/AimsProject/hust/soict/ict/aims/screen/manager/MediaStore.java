@@ -54,7 +54,7 @@ public class MediaStore extends JPanel {
         JDialog dvdDialog = new JDialog();
 
         JPanel dvd = new JPanel();
-        dvd.setLayout(new GridLayout(3, 1));
+        dvd.setLayout(new GridLayout(2, 1));
 
         JLabel dvdName = new JLabel("You are playing: " + media.getTitle());
         JLabel dvdLength = new JLabel("DVD length: " + media.getLength());
@@ -64,7 +64,8 @@ public class MediaStore extends JPanel {
 
         dvdDialog.add(dvd);
 
-        dvdDialog.setSize(1024, 768);
+        dvdDialog.setSize(350, 200);
+        dvdDialog.setLocationRelativeTo(null);
 
         dvdDialog.setVisible(true);
 
@@ -93,8 +94,8 @@ public class MediaStore extends JPanel {
 
         cdDialog.add(cd);
 
-        cdDialog.setSize(1024, 768);
-
+        cdDialog.setSize(512, 384);
+        cdDialog.setLocationRelativeTo(null);
         cdDialog.setVisible(true);
     }
 }

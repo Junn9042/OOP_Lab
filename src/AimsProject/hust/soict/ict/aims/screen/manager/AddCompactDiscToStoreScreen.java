@@ -57,11 +57,11 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
         trackPanel.setLayout(new BoxLayout(trackPanel, BoxLayout.Y_AXIS));
         trackPanels = new ArrayList<>();
 
-        center.add(artistLabel);
-        center.add(artistField);
+        center.add(artistLabel, labelConstrains);
+        center.add(artistField, fieldConstrains);
 
-        center.add(new JLabel("Tracks:"));
-        center.add(trackPanel);
+        center.add(new JLabel("Tracks:"), labelConstrains);
+        center.add(trackPanel, fieldConstrains);
 
         addTrackButton = new JButton("Add Track");
         addTrackButton.addActionListener((ActionEvent e) -> {
