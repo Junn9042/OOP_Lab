@@ -14,6 +14,7 @@ public class StoreManagerScreen extends JFrame {
     private Store store;
     private JPanel north;
     private JPanel center;
+    private JScrollPane scrollPane;
     JPanel createNorth() {
         JPanel north = new JPanel();
         north.setLayout(new BoxLayout(north, BoxLayout.Y_AXIS));
@@ -92,26 +93,32 @@ public class StoreManagerScreen extends JFrame {
 
     JPanel createCenter() {
         JPanel center = new JPanel();
-        center.setLayout(new GridLayout(3, 3, 2, 2));
-
-        center.removeAll();
-
+        center.setLayout(new GridBagLayout());
+        center.setBackground(new Color(141,179,237));
         ArrayList<Media> mediaInStore = store.getItemsInStore();
-        for (int i = 0; i < mediaInStore.size(); i++) {
-            MediaStore cell = new MediaStore(mediaInStore.get(i));
-            center.add(cell);
+        if (!mediaInStore.isEmpty()) {
+            int itemsToShow = mediaInStore.size();
+            for (int i = 0; i < itemsToShow; i++) {
+                GridBagConstraints mediaConstraints = new GridBagConstraints();
+                mediaConstraints.gridx = i % 3;
+                mediaConstraints.gridy = i / 3;
+                mediaConstraints.insets = new Insets(5, 5, 5, 5); // Khoảng cách giữa các ô
+                mediaConstraints.fill = GridBagConstraints.BOTH; // Ô đủ lớn để điền toàn bộ không gian
+                mediaConstraints.weightx = 1.0; // Chia đều không gian theo chiều ngang
+                mediaConstraints.weighty = 1.0; // Chia đều không gian theo chiều dọc
+
+                MediaStore cell = new MediaStore(mediaInStore.get(i));
+                cell.setPreferredSize(new Dimension(320, 120)); // Cố định kích thước cell, ví dụ: rộng 200px và cao 100px
+                center.add(cell, mediaConstraints);
+            }
         }
-
-        center.revalidate();
-        center.repaint();
-
         return center;
     }
 
     private void switchAddScreen(JPanel panel){
-        getContentPane().remove(center);
+        getContentPane().remove(scrollPane);
         this.center = panel;
-        getContentPane().add(panel, BorderLayout.CENTER);
+        getContentPane().add(center, BorderLayout.CENTER);
         revalidate();
         repaint();
     }
@@ -119,7 +126,8 @@ public class StoreManagerScreen extends JFrame {
     private void switchStoreScreen(){
         getContentPane().remove(center);
         this.center = createCenter();
-        getContentPane().add(center, BorderLayout.CENTER);
+        scrollPane = new JScrollPane(center);
+        getContentPane().add(scrollPane, BorderLayout.CENTER);
         revalidate();
         repaint();
     }
@@ -132,8 +140,13 @@ public class StoreManagerScreen extends JFrame {
         cp.setLayout(new BorderLayout());
         this.north = createNorth();
         this.center = createCenter();
+
+        scrollPane = new JScrollPane(center);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
         cp.add(north, BorderLayout.NORTH);
-        cp.add(center, BorderLayout.CENTER);
+        cp.add(scrollPane, BorderLayout.CENTER);
 
         setTitle("Store");
         setSize(1024, 768);

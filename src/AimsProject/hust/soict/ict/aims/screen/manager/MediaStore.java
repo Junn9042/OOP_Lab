@@ -86,8 +86,8 @@ public class MediaStore extends JPanel {
         cd.add(cdLength);
 
         for(int i = 0; i < media.gettrackName().size(); i++){
-            JLabel trackName = new JLabel("Track " + i + 1 + " name: " + media.getTracks().get(i).getTitle());
-            JLabel trackLength = new JLabel("Length of track " + i + 1 + " : " + media.getTracks().get(i).getLength());
+            JLabel trackName = new JLabel("Track " + (i + 1) + " name: " + media.getTracks().get(i).getTitle());
+            JLabel trackLength = new JLabel("Length of track " + (i + 1) + " : " + media.getTracks().get(i).getLength());
             cd.add(trackName);
             cd.add(trackLength);
         }

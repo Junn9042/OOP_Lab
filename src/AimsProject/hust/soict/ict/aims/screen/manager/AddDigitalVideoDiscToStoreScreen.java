@@ -25,6 +25,7 @@ public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
             @Override
             public void actionPerformed(ActionEvent e) {
                 addItemToStore();
+                JOptionPane.showMessageDialog(null,"New DVD has been added");;
             }
         });
 
@@ -47,7 +48,12 @@ public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
 
         DigitalVideoDisc dvd = new DigitalVideoDisc(id, title, category, cost, length, director);
         store.addMedia(dvd);
-
+        idField.setText("");
+        titleField.setText("");
+        categoryField.setText("");
+        costField.setText("");
+        lengthField.setText("");
+        directorField.setText("");
 
     }
     public static void main(String[] args) {
