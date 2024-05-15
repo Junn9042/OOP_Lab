@@ -25,7 +25,7 @@ public class AddBookToStoreScreen extends AddItemToStoreScreen {
             @Override
             public void actionPerformed(ActionEvent e) {
                 addItemToStore(); // Call abstract method when the button is clicked
-
+                JOptionPane.showMessageDialog(null,"New Book has been added");
             }
         });
 
@@ -48,6 +48,11 @@ public class AddBookToStoreScreen extends AddItemToStoreScreen {
 
         Book book = new Book(id, title, category, cost, authorsList);
         store.addMedia(book);
+        idField.setText("");
+        titleField.setText("");
+        categoryField.setText("");
+        costField.setText("");
+        authorArea.setText("");
 
     }
 

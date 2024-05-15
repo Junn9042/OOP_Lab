@@ -75,7 +75,7 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
             @Override
             public void actionPerformed(ActionEvent e) {
                 addItemToStore(); // Call abstract method when the button is clicked
-            }
+                JOptionPane.showMessageDialog(null,"New CD has been added");            }
         });
 
         center.add(addButton, fieldConstrains);
@@ -116,9 +116,13 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
         }
 
         CompactDisc CD = new CompactDisc(id, title, category, cost, artist, tracks);
-        store.addMedia(CD);
-
-
+        store.addMedia(CD);store.addMedia(CD);
+        idField.setText("");
+        titleField.setText("");
+        categoryField.setText("");
+        costField.setText("");
+        artistField.setText("");
+        trackPanels.clear();
     }
 
     public static void main(String[] args) {
