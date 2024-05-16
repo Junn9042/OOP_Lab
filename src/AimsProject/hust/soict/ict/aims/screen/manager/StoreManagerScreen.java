@@ -117,6 +117,7 @@ public class StoreManagerScreen extends JFrame {
 
     private void switchAddScreen(JPanel panel){
         getContentPane().remove(scrollPane);
+        getContentPane().remove(center);
         this.center = panel;
         getContentPane().add(center, BorderLayout.CENTER);
         revalidate();
