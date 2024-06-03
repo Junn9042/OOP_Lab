@@ -4,10 +4,11 @@ import AimsProject.hust.soict.ict.aims.cart.Cart;
 import AimsProject.hust.soict.ict.aims.media.DigitalVideoDisc;
 import AimsProject.hust.soict.ict.aims.media.Media;
 
+import javax.naming.LimitExceededException;
 import java.util.List;
 
 public class CartTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws LimitExceededException {
         //Create a new cart
         Cart anOrder = new Cart();
 

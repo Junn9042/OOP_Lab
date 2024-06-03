@@ -67,8 +67,16 @@ public abstract class Media {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (!(obj instanceof Media that)) return false;
-        return Objects.equals(getTitle(), that.getTitle());
+
+        // Checking if the object is null or not an instance of Media
+        if (!(obj instanceof Media)) return false;
+
+        // Casting the object to Media type
+        Media that = (Media) obj;
+
+        // Checking if titles and costs are equal
+        return Objects.equals(this.getTitle(), that.getTitle()) &&
+                Float.compare(this.getCost(), that.getCost()) == 0;
     }
 
     @Override

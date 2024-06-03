@@ -1,10 +1,11 @@
 package AimsProject.hust.soict.ict.test.disc;
 
+import AimsProject.hust.soict.ict.aims.exception.PlayerException;
 import AimsProject.hust.soict.ict.aims.media.CompactDisc;
 import AimsProject.hust.soict.ict.aims.media.Track;
 
 public class CompactDiscTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PlayerException {
         CompactDisc compactDisc = new CompactDisc();
 
         Track track1 = new Track("Track1", 50);
@@ -15,7 +16,5 @@ public class CompactDiscTest {
         compactDisc.addTrack(track3);
         System.out.println(compactDisc.getLength());
         compactDisc.addTrack(track1);
-
-        compactDisc.play();
     }
 }
