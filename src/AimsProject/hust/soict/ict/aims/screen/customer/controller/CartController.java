@@ -178,8 +178,8 @@ public class CartController {
 
     @FXML
     void btnPlaceOrderPressed(ActionEvent event) {
-        float totalCost = cart.totalCost(); // Assuming you have a method to calculate total cost in your Cart class
-        int numberOfItems = cart.getItemsOrdered().size(); // Assuming you have a method to get the number of items in your Cart class
+        float totalCost = cart.totalCost();
+        int numberOfItems = cart.getItemsOrdered().size();
 
         String notificationMessage = "Order placed successfully!\n" +
                 "Total Cost: $" + String.format("%.2f", totalCost) + "\n" +

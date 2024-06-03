@@ -1,14 +1,11 @@
 package AimsProject.hust.soict.ict.test.cart;
 
 import AimsProject.hust.soict.ict.aims.cart.Cart;
+import AimsProject.hust.soict.ict.aims.exception.CartFullException;
 import AimsProject.hust.soict.ict.aims.media.DigitalVideoDisc;
-import AimsProject.hust.soict.ict.aims.media.Media;
-
-import javax.naming.LimitExceededException;
-import java.util.List;
 
 public class CartTest {
-    public static void main(String[] args) throws LimitExceededException {
+    public static void main(String[] args) throws CartFullException {
         //Create a new cart
         Cart anOrder = new Cart();
 

@@ -1,6 +1,7 @@
 package AimsProject.hust.soict.ict.aims;
 
 import AimsProject.hust.soict.ict.aims.cart.Cart;
+import AimsProject.hust.soict.ict.aims.exception.CartFullException;
 import AimsProject.hust.soict.ict.aims.media.*;
 import AimsProject.hust.soict.ict.aims.store.Store;
 
@@ -61,7 +62,7 @@ public class AIMS {
         System.out.println("Please choose a number: 0-1-2-3-4-5");
     }
 
-    public static void cartOption() throws LimitExceededException {
+    public static void cartOption() throws LimitExceededException, CartFullException {
         int choice;
         do {
             cartMenu();
@@ -147,7 +148,7 @@ public class AIMS {
             }
         }
     }
-    public static void detailOption(Media chosenMedia) throws LimitExceededException {
+    public static void detailOption(Media chosenMedia) throws CartFullException, LimitExceededException {
         int choice;
         do {
             mediaDetailsMenu();
@@ -191,7 +192,7 @@ public class AIMS {
             }
         }
     }
-    public static void seeAMediaDetail(Media searchTitle) throws LimitExceededException {
+    public static void seeAMediaDetail(Media searchTitle) throws LimitExceededException, CartFullException {
         int choice;
         do {
             mediaDetailsMenu();
@@ -239,7 +240,7 @@ public class AIMS {
             System.out.println("The chosen media is not a CD or DVD \n");
         }
     }
-    public static void choosingOption() throws LimitExceededException {
+    public static void choosingOption() throws LimitExceededException, CartFullException {
         int choice;
         do {
             storeMenu();
@@ -379,7 +380,7 @@ public class AIMS {
         store.addMedia(cd);
 
     }
-    public static void updateOption() throws LimitExceededException {
+    public static void updateOption() throws LimitExceededException, CartFullException {
         System.out.println("Update options: ");
         System.out.println("1. Add");
         System.out.println("2. Remove");
@@ -423,7 +424,7 @@ public class AIMS {
             menuOption();
         }
     }
-    public static void menuOption() throws LimitExceededException {
+    public static void menuOption() throws LimitExceededException, CartFullException {
         int choice;
         do {
             showMenu();
@@ -450,7 +451,7 @@ public class AIMS {
         }
 
     }
-    public static void main(String[] args) throws LimitExceededException {
+    public static void main(String[] args) throws LimitExceededException, CartFullException {
         DigitalVideoDisc dvd1 = new DigitalVideoDisc(1, "The Lion King", "Animation", 19.95f, 87, "Roger Allers");
         store.addMedia((Media) dvd1);
         DigitalVideoDisc dvd2 = new DigitalVideoDisc(2, "Star War", "Science Fiction", 24.95f, 87, "Geoger Lucas");

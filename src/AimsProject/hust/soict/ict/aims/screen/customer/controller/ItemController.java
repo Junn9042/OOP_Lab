@@ -1,6 +1,7 @@
 package AimsProject.hust.soict.ict.aims.screen.customer.controller;
 
 import AimsProject.hust.soict.ict.aims.cart.Cart;
+import AimsProject.hust.soict.ict.aims.exception.CartFullException;
 import AimsProject.hust.soict.ict.aims.exception.PlayerException;
 import AimsProject.hust.soict.ict.aims.media.*;
 import javafx.application.Platform;
@@ -11,8 +12,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-
-import javax.naming.LimitExceededException;
 
 public class ItemController {
     private Media media;
@@ -26,9 +25,22 @@ public class ItemController {
     @FXML
     private Label lblCost;
     @FXML
-    void btnAddtoCartClicked(ActionEvent event) throws LimitExceededException {
-        if (cart != null && media != null) {
-            cart.addMedia(media);
+    void btnAddtoCartClicked(ActionEvent event) throws CartFullException {
+        if(cart.getItemsOrdered().size() < cart.MAX_NUMBERS_ORDERS){
+            if (cart != null && media != null) {
+                cart.addMedia(media);
+            }
+        }
+        else {
+            String errorMessage = "ERROR: Cart is full";
+            System.err.println(errorMessage);
+            Platform.runLater(() -> {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Cart is full");
+                alert.setHeaderText(null);
+                alert.setContentText(errorMessage);
+                alert.showAndWait();
+            });
         }
     }
 
