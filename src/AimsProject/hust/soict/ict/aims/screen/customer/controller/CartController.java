@@ -226,7 +226,7 @@ public class CartController {
             }
         });
 
-        lblTotalCost.setText(String.valueOf(cart.totalCost()));
+        lblTotalCost.setText(String.valueOf(cart.totalCost()) + "$");
     }
 
     void updateButtonBar(Media media){
