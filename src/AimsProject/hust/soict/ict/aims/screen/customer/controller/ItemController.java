@@ -80,6 +80,12 @@ public class ItemController {
         } else {
             if (cart != null && media != null) {
                 cart.addMedia(media);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Added to Cart");
+                alert.setHeaderText(null);
+                alert.setContentText(media.getTitle() + " has been added to the cart!");
+                alert.showAndWait();
+                
             }
         }
     }
